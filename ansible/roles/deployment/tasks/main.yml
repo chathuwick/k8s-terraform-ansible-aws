@@ -1,0 +1,27 @@
+---
+
+#########
+#git
+#########
+- command: rm -fr /opt/
+
+- name: clone nodejs repo
+  command: "git clone -b {{ git_branch }} {{ git_repo }} /opt/example/"
+##########
+#Docker
+##########
+
+- name: Build the Docker Image
+  command: "docker build /opt/example/ -t nodejsapp"
+
+- name: Tag the Docker Image
+  command: "docker tag nodejsapp {{ docker_img_tag_name }}"
+
+- name: Push the Docker Image
+  command: "docker push {{ docker_img_tag_name }}"
+
+- name: Create the deployment
+  command: "kubectl run {{ k8s_deployment_name }} --image={{ docker_img_tag_name }} --port={{ k8s_deployment_port }} --replicas={{ k8s_deployment_replicas }}"
+
+- name: Create the service
+  command: "kubectl expose deployment {{ k8s_deployment_name }} --port={{ k8s_service_port }} --target-port={{ k8s_deployment_port }} --type=LoadBalancer"
