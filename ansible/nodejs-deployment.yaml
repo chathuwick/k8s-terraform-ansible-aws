@@ -1,0 +1,9 @@
+---
+#####################
+# Deployment
+#####################
+
+- hosts: localhost
+  connection: local
+  roles:
+     - deployment
