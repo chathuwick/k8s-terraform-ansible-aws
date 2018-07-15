@@ -8,7 +8,7 @@
 
   tasks:
     - name: Install Python
-      raw: "apt-get -y -q install python"
+      raw: "apt-get update && apt-get -y -q install python"
       become: true
       retries: 10
       delay: 20
