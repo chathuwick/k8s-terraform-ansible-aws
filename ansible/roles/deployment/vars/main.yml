@@ -1,0 +1,10 @@
+---
+
+git_repo: "https://github.com/chathuwick/node-todo.git"
+git_branch: "master"
+docker_img_name: "nodejsapp"
+docker_img_tag_name: "uwickch/k8s-nodejs:V3"
+k8s_deployment_name: "nodejsapp"
+k8s_deployment_port: "8080"
+k8s_deployment_replicas: "1"
+k8s_service_port: "80"
