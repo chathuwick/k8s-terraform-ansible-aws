@@ -109,7 +109,7 @@ $ terraform apply
 ```
 Terraform outputs public DNS name of Kubernetes API and Workers public IPs.
 
-![alt tag](https://github.com/chathuwick/k8s-terraform-ansible-aws/blob/master/img/kubectlsvcOutput.png)
+![alt tag](https://github.com/chathuwick/k8s-terraform-ansible-aws/blob/master/img/terraformOutput.png)
 
 ### Generated SSH config
 
@@ -171,4 +171,4 @@ Finally you can get the external URL to the deployed nodejs app by executing bel
 ```
 Kubectl describe svc < k8s_deployment_name >
 ```
-![alt tag](https://github.com/chathuwick/k8s-terraform-ansible-aws/blob/master/img/terraformOutput.png)
+![alt tag](https://github.com/chathuwick/k8s-terraform-ansible-aws/blob/master/img/kubectlsvcOutput.png)
